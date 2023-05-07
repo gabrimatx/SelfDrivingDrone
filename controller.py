@@ -27,6 +27,12 @@ class Controller:
         frame = self.tello.get_frame_read().frame
         pass
 
+    def _draw_on_frame(self, frame, to_draw) -> None:
+        """
+        Takes as an input a raw frame and draws on it.
+        """
+        pass
+
     def _compute_and_send_controls(self, obstacle_position) -> None:
         """
         Computes controls according to obstacle position and sends them to the drone.
