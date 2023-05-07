@@ -23,3 +23,7 @@ Self driving drone project for computer vision exam at Sapienza University of Ro
 ## Notes
 - Image instance segmentation: PyTorch detectron2
 
+## Drone specifications
+- $x_1 = 98$ mm
+- $x_2 = 92.5$ mm
+- $x_3 = 41$ mm
