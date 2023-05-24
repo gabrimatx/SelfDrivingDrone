@@ -6,24 +6,25 @@ from controller import Controller
 tello = Tello()
 
 tello.connect()
+print(f"Battery: {tello.get_battery()}%")
 tello.streamon()
-tello.takeoff()
+tello.send_rc_control(0,0,0,0)
+#tello.takeoff()
+#tello.move_up(70)
 
 controller = Controller(tello)
 
-def stream() -> None:
-    """
-    Streams processed frames, called by streamer thread.
-    """
-    while controller.processed_frame is not None:
-        cv2.imshow("Tello Camera", controller.processed_frame)
-
-streamer = Thread(target = stream, daemon=True)
-streamer.start()
-
-while not controller.land_signal_detected:
+while True:
     controller.update()
 
-tello.land()
+    if controller.frame_to_stream is None:
+        continue
+    cv2.imshow("Tello Camera", controller.frame_to_stream)
+
+    if controller.land_signal_detected or cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
+tello.end()
+cv2.destroyAllWindows()
     
        
