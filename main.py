@@ -1,4 +1,3 @@
-from threading import Thread
 import cv2
 from djitellopy import Tello
 from controller import Controller
@@ -9,10 +8,10 @@ tello.connect()
 print(f"Battery: {tello.get_battery()}%")
 tello.streamon()
 tello.send_rc_control(0,0,0,0)
-#tello.takeoff()
-#tello.move_up(70)
+tello.takeoff()
+tello.move_up(70)
 
-controller = Controller(tello)
+controller = Controller(tello, "models/cascade.xml", "Cascade")
 
 while True:
     controller.update()
@@ -25,6 +24,6 @@ while True:
         break
 
 tello.end()
-cv2.destroyAllWindows()
+cv2.destroyAllWindows()   
     
        
