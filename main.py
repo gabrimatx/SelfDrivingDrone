@@ -11,7 +11,7 @@ tello.send_rc_control(0,0,0,0)
 tello.takeoff()
 tello.move_up(70)
 
-controller = Controller(tello, "models/cascade.xml", "Cascade")
+controller = Controller(tello, *Controller.SSD_LITE)
 
 while True:
     controller.update()

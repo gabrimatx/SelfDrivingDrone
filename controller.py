@@ -8,6 +8,9 @@ class Controller:
     """
     Class for drone autonomous control.
     """
+    CASCADE = "models/cascade.xml", "Cascade"
+    FASTER_RCNN = "models/fasterrcnn.pth", "Faster R-CNN"
+    SSD_LITE = "models/sddlite.pth", "SSDLite"
     def __init__(self, tello: Tello, model_path: str, model_type: str = "SDDLite") -> None:
         self.tello = tello
         self.frame_to_stream = None
