@@ -12,7 +12,6 @@ try:
 except:
     modality = argument_dict(default_model.lower())
 
-
 tello = Tello()
 
 tello.connect()
