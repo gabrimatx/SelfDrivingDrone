@@ -1,29 +1,87 @@
-# DEADLINE: 2/06
 # SelfDrivingDrone
 
-Self driving drone project for computer vision exam at Sapienza University of Rome.
+SelfDrivingDrone is an AI software system that implements state-of-the-art object detection algorithms, including [Faster R-CNN](https://arxiv.org/abs/1506.01497) and [SSDlite](https://arxiv.org/abs/1512.02325), to fly a drone through an obstacle course. It is written in Python and powered by the [djitellopy](https://github.com/damiafuentes/DJITelloPy) and [simple-pid](https://pypi.org/project/simple-pid/) libraries.
 
-* * *
-### Ruben Ciranni
-- Implement <em>_compute_and_send_controls</em>
-- Implement <em>_detect_nearest_obstacle</em> /3
-* * *
-### Gabriele Matiddi
-- Build the obstacle course
-- Implement <em>_detect_nearest_obstacle</em> /3
-* * *
-### Luigi Pizza
-- Implement <em>_detect_nearest_obstacle</em> /3
-- Implement <em>_draw_on_frame</em>
-* * *
+<div align="center">
+  <img src="demo/demo.gif" width="150px" />
+  <p>Example SelfDrivingDrone output.</p>
+</div>
 
-### All
-- Study object detection
+# Introduction
 
-## Notes
-- Image instance segmentation: PyTorch detectron2
+The goal of SelfDrivingDrone is to provide a high-quality, high-performance code for all those who want to fly their Tello drones through any obstacle course.
 
-## Drone specifications
-- $x_1 = 98$ mm
-- $x_2 = 92.5$ mm
-- $x_3 = 41$ mm
+SelfDrivingDrone exploits fine-tuned implementations of the following object detection algorithms:
+
+- [Faster R-CNN](https://arxiv.org/abs/1506.01497): Slow, but extremely efficient. 
+- [SSDlite](https://arxiv.org/abs/1512.02325)
+- [Haar Cascade Classifier](https://ieeexplore.ieee.org/document/990517)
+
+<br>
+<br>
+
+# Installation
+
+**Requirements:**
+
+- Python3, Dji Tello drone
+
+<div align="center">
+  <img src="demo/drone-dji-tello.jpg" width="250px" />
+  <p>An example of a Dji Tello drone.</p>
+</div>
+
+<br>
+
+**Clone the SelfDrivingDrone repository:**
+
+```
+# SELF_DRIVING_DRONE=/path/to/clone/SelfDrivingDrone
+git clone https://github.com/gabrimatx/SelfDrivingDrone $SELF_DRIVING_DRONE
+```
+
+**Install Python dependencies:**
+
+```
+pip install -r $SELF_DRIVING_DRONE/requirements.txt
+```
+
+- [PyTorch](https://pytorch.org/get-started/locally/)
+
+<br>
+<br>
+
+# Quick Start: Using SelfDrivingDrone
+
+During installation, you will be provided with 3 pre-trained models designed for Object Recognition on the obstacle depicted in Figure 1. Additionally, you will receive a way to run them automatically through the `main.py` file.
+
+<div align="center">
+  <img src="demo/obstacle.jpeg" width="300px" />
+  <p>(Fig. 1) Obstacle Example.</p>
+</div>
+
+Please, note that any obstacles of similar shape will be suitable to be recognized by our models, but the color of the paper may have a small impact on the results.
+
+### How to run the project:
+
+Choose one of the following lines based on the model of your choice:
+
+```
+# SELF_DRIVING_DRONE=/path/to/clone/SelfDrivingDrone
+python main.py cascade 
+python main.py ssd-lite 
+python main.py faster-rcnn 
+$SELF_DRIVING_DRONE
+```
+
+ - If no parameter is passed through the command line to the `main.py` file, the default executed model will be the SSDlite model. 
+
+- the default executed model can be changed at will in the `main.py` file, simply by changing the value of the `default_model` variable among `Cascade`, `SSD-lite` and `faster-RCNN`. (the assignments are case insensitive)
+
+
+
+<!-- 
+## License
+
+SelfDrivingDrone is released under the [some license](link). See the [notice](other link) file for additional details. 
+-->
