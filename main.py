@@ -1,7 +1,17 @@
 import cv2
+import sys
 from djitellopy import Tello
 from controller import Controller
 from time import sleep
+default_model = "ssd-lite"
+
+
+argument_dict = {"cascade":Controller.CASCADE, "ssd-lite":Controller.SSD_LITE, "faster-rcnn": Controller.FASTER_RCNN}
+try:
+    modality = argument_dict[sys[1].lower()]
+except:
+    modality = argument_dict(default_model.lower())
+
 
 tello = Tello()
 
@@ -17,7 +27,7 @@ tello.takeoff()
 tello.send_rc_control(0, 0, 50, 0)
 sleep(2.5)
 
-controller = Controller(tello, *Controller.SSD_LITE)
+controller = Controller(tello, *modality)
 
 while True:
     controller.update()
@@ -31,5 +41,3 @@ while True:
 
 tello.end()
 cv2.destroyAllWindows()   
-    
-       
