@@ -13,7 +13,7 @@ class ObstaclesDetector:
     """
     Class for obstacle detection. 
     """
-    def __init__(self, model_path: str, model_type: str = "SDDLite") -> None:
+    def __init__(self, model_path: str, model_type: str = "SSDLite") -> None:
         self.model_type = model_type
         self.model_path = model_path
         self._initialize_model()
@@ -78,7 +78,7 @@ class ObstaclesDetector:
         
         num_classes = 2  # 1 class (obstacle) + background
 
-        if self.model_type == "SDDLite":
+        if self.model_type == "SSDLite":
             self.model = torchvision.models.detection.ssdlite320_mobilenet_v3_large(pretrained=True)
 
             in_channels = det_utils.retrieve_out_channels(self.model.backbone, (320, 320))
@@ -94,7 +94,8 @@ class ObstaclesDetector:
             self.model.roi_heads.box_predictor = FastRCNNPredictor(in_features, num_classes)
 
         else:
-             raise ValueError("Parameter model should be either Cascade, Faster R-CNN or SDDlite")
+             print(self.model_type, type(self.model_type))
+             raise ValueError(f"{self.model_type} in not a valid model. Parameter model type should be either Cascade, Faster R-CNN or SDDLite")
         
         self.model.load_state_dict(torch.load(self.model_path, map_location=self.device))
         self.model.eval()

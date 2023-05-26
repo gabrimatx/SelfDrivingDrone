@@ -10,20 +10,21 @@ class Controller:
     """
     CASCADE = "models/cascade.xml", "Cascade"
     FASTER_RCNN = "models/fasterrcnn.pth", "Faster R-CNN"
-    SSD_LITE = "models/sddlite.pth", "SSDLite"
+    SSD_LITE = "models/ssdlite.pth", "SSDLite"
     def __init__(self, tello: Tello, model_path: str, model_type: str = "SDDLite") -> None:
         self.tello = tello
         self.frame_to_stream = None
         self.land_signal_detected = False
-
+        print(model_path)
+        print(model_type)
         self.obstacles_detector = ObstaclesDetector(model_path, model_type)
 
         self.frame_width = 360
         self.frame_height = 240
 
-        self.pid_x = PID(-0.2, -0.01, -0.1, setpoint=self.frame_width // 2)
-        self.pid_y = PID(0.2, 0.01, 0.1, setpoint=self.frame_height // 2 - 30)
-        self.pid_d = PID(0.0006, 0, 0.0003, setpoint=self.frame_height*self.frame_width)
+        self.pid_x = PID(-0.3, -0.01, -0.1, setpoint=self.frame_width // 2)
+        self.pid_y = PID(0.3, 0.01, 0.1, setpoint=self.frame_height // 2 - 30)
+        self.pid_d = PID(0.0003, 0, 0, setpoint=self.frame_height*self.frame_width)
 
     def update(self) -> None:
         """
@@ -45,11 +46,11 @@ class Controller:
         Computes controls according to obstacle position and sends them to the drone.
         This is achieved using a PID control.
         """
+        if len(boxes) == 0:
+            self.tello.send_rc_control(0,0,0,0)
+            return
 
         areas = (boxes[:, 3] - boxes[:, 1]) * (boxes[:, 2] - boxes[:, 0])
-        
-        if len(areas) == 0:
-            return
         
         max_area_i = np.argmax(areas)
         max_area = areas[max_area_i]
