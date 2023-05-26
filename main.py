@@ -25,11 +25,11 @@ while True:
     if controller.frame_to_stream is None:
         continue
     cv2.imshow("Tello Camera", controller.frame_to_stream)
+    cv2.imshow("Errors", controller.plot_to_stream)
+    cv2.moveWindow("Errors", 0, controller.output_frame_height - 40)
 
-    if controller.land_signal_detected or cv2.waitKey(1) & 0xFF == ord('q'):
+    if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
 tello.end()
-cv2.destroyAllWindows()   
-    
-       
+cv2.destroyAllWindows()
