@@ -1,0 +1,5 @@
+numpy
+matplotlib
+opencv-python
+djitellopy
+simple_pid

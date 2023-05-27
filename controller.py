@@ -20,7 +20,7 @@ class Controller:
         self._tello = tello
         self.frame_to_stream = None
         self.plot_to_stream = None
-        self._passing_through = False
+        self._controller_off = False
         self._land = False
         self._zero_boxes_counter = 0
 
@@ -54,9 +54,9 @@ class Controller:
         Computes controls according to obstacle position and sends them to the drone.
         This is achieved using a PID control.
         """
-        if self._passing_through:
+        if self._controller_off:
             if time.time() - self._start_passing_through > 2.5:
-                self._passing_through = False
+                self._controller_off = False
             plot_img = self._update_and_get_plot_img()
             return plot_img
 
@@ -65,7 +65,7 @@ class Controller:
             # try moving up (obstacle could be out of vision range)
             self._tello.send_rc_control(0, 0, 40, 0)
             self._start_passing_through = time.time()
-            self._passing_through = True
+            self._controller_off = True
         
         elif self._zero_boxes_counter == 100:
             # When no box is detected for more than 160 times,
@@ -95,7 +95,7 @@ class Controller:
                     # Tello is ready to pass through the obstacle
                     self._tello.send_rc_control(0, 30, 0, 0)
                     self._start_passing_through = time.time()
-                    self._passing_through = True
+                    self._controller_off = True
                     plot_img = self._update_and_get_plot_img()
                     return plot_img
                 
