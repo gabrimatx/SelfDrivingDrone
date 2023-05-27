@@ -89,7 +89,7 @@ We're a group of three university students studying at Sapienza University of Ro
 The entire process has been nothing short of stimulating and fulfilling, and we sincerely hope that our passion and dedication shine through in the final outcome. For any clarifications or further information regarding the project, please feel free to reach out to us.
 
 
-<img src="https://github.com/gabrimatx/SelfDrivingDrone/main/CONTRIBUTORS.svg">
+<img src="./CONTRIBUTORS.svg">
 
 <!-- 
 ## License
