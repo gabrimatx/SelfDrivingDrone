@@ -33,14 +33,14 @@ SelfDrivingDrone exploits fine-tuned implementations of the following object det
 
 <br>
 
-**Clone the SelfDrivingDrone repository:**
+### **Clone the SelfDrivingDrone repository:**
 
 ```
 # SELF_DRIVING_DRONE=/path/to/clone/SelfDrivingDrone
 git clone https://github.com/gabrimatx/SelfDrivingDrone $SELF_DRIVING_DRONE
 ```
 
-**Install Python dependencies:**
+### **Install Python dependencies:**
 
 ```
 pip install -r $SELF_DRIVING_DRONE/requirements.txt
@@ -62,7 +62,8 @@ During installation, you will be provided with 3 pre-trained models designed for
 
 Please, note that any obstacles of similar shape will be suitable to be recognized by our models, but the color of the paper may have a small impact on the results.
 
-### How to run the project:
+
+### **How to run the project:**
 
 Choose one of the following lines based on the model of your choice:
 
@@ -78,7 +79,17 @@ $SELF_DRIVING_DRONE
 
 - the default executed model can be changed at will in the `main.py` file, simply by changing the value of the `default_model` variable among `Cascade`, `SSD-lite` and `faster-RCNN`. (the assignments are case insensitive)
 
+<br>
+<br>
 
+# Contributors
+
+We're a group of three university students studying at Sapienza University of Rome. SelfDrivingDrone is a project that we have undertaken as part of our academic curriculum, specifically designed to fulfill the requirements of one of our examinations -  AI Lab: Computer Vision and NLP.
+
+The entire process has been nothing short of stimulating and fulfilling, and we sincerely hope that our passion and dedication shine through in the final outcome. For any clarifications or further information regarding the project, please feel free to reach out to us.
+
+
+<img src="https://github.com/gabrimatx/SelfDrivingDrone/main/CONTRIBUTORS.svg">
 
 <!-- 
 ## License
