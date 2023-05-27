@@ -2,29 +2,37 @@ import cv2
 import sys
 from djitellopy import Tello
 from controller import Controller
-from time import sleep
 default_model = "ssd-lite"
 
 
 argument_dict = {"cascade":Controller.CASCADE, "ssd-lite":Controller.SSD_LITE, "faster-rcnn": Controller.FASTER_RCNN}
 try:
-    modality = argument_dict[sys[1].lower()]
+    modality = argument_dict[sys.argv[1].lower()]
 except:
-    modality = argument_dict(default_model.lower())
+    modality = argument_dict[default_model]
 
+print(f"SELF DRIVING DRONE")
+print(f"Selected model: {modality[1]}")
+
+print("Connecting to drone...")
 tello = Tello()
-
 tello.connect()
-print(f"Battery: {tello.get_battery()}%")
 tello.streamon()
+print("Done")
+print(f"Tello battery: {tello.get_battery()}%")
 
+print("Loading model and controller...")
+controller = Controller(tello, *modality)
+print("Done")
+
+print("Loading Tello camera...")
 while tello.get_frame_read().frame is None:
     continue
+print("Done")
 
+print("Tello ready to takeoff")
 tello.send_rc_control(0,0,0,0)
 tello.takeoff()
-
-controller = Controller(tello, *modality)
 
 video_writer_drone = cv2.VideoWriter("video_drone.mp4", 
                          cv2.VideoWriter_fourcc(*"MP4V"),
