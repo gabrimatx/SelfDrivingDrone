@@ -82,17 +82,18 @@ $SELF_DRIVING_DRONE
 <br>
 <br>
 
-# Contributors
+# Authors
 
-We're a group of three university students studying at Sapienza University of Rome. SelfDrivingDrone is a project that we have undertaken as part of our academic curriculum, specifically designed to fulfill the requirements of one of our examinations -  AI Lab: Computer Vision and NLP.
+We're a group of three hard-working university students at Sapienza University of Rome. SelfDrivingDrone is a project that we have undertaken as part of our academic curriculum, specifically designed to fulfill the requirements of one of our examinations -  AI Lab: Computer Vision and NLP.
 
 The entire process has been nothing short of stimulating and fulfilling, and we sincerely hope that our passion and dedication shine through in the final outcome. For any clarifications or further information regarding the project, please feel free to reach out to us.
 
 
-<img src="./CONTRIBUTORS.svg">
+<img src="./AUTHORS.svg">
 
-<!-- 
+<br>
+<br>
+
 ## License
 
-SelfDrivingDrone is released under the [some license](link). See the [notice](other link) file for additional details. 
--->
+SelfDrivingDrone is released under the [MIT License](./LICENSE). 
