@@ -2,10 +2,10 @@ import cv2
 import sys
 from djitellopy import Tello
 from controller import Controller
-default_model = "ssd-lite"
+default_model = "ssdlite"
 
 
-argument_dict = {"cascade":Controller.CASCADE, "ssd-lite":Controller.SSD_LITE, "faster-rcnn": Controller.FASTER_RCNN}
+argument_dict = {"cascade":Controller.CASCADE, "ssdlite":Controller.SSD_LITE, "faster-rcnn": Controller.FASTER_RCNN}
 try:
     modality = argument_dict[sys.argv[1].lower()]
 except:

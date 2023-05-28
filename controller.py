@@ -16,7 +16,7 @@ class Controller:
     FASTER_RCNN = "models/fasterrcnn.pth", "Faster R-CNN"
     SSD_LITE = "models/ssdlite.pth", "SSDLite"
     
-    def __init__(self, tello: Tello, model_path: str, model_type: str = "SDDLite") -> None:
+    def __init__(self, tello: Tello, model_path: str = "models/ssdlite.pth", model_type: str = "SSDLite") -> None:
         self._tello = tello
         self.frame_to_stream = None
         self.plot_to_stream = None
