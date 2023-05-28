@@ -3,7 +3,7 @@
 SelfDrivingDrone is an AI software system that implements state-of-the-art object detection algorithms, including [Faster R-CNN](https://arxiv.org/abs/1506.01497) and [SSDlite](https://arxiv.org/abs/1512.02325), to fly a drone through an obstacle course. It is written in Python and powered by the [djitellopy](https://github.com/damiafuentes/DJITelloPy) and [simple-pid](https://pypi.org/project/simple-pid/) libraries.
 
 <div align="center">
-  <img src="demo/demo.gif" width="150px" />
+  <img src="readme_figs/demo.gif" width="150px" />
   <p>Example SelfDrivingDrone output.</p>
 </div>
 
@@ -27,7 +27,7 @@ SelfDrivingDrone exploits fine-tuned implementations of the following object det
 - Python3, Dji Tello drone
 
 <div align="center">
-  <img src="demo/drone-dji-tello.jpg" width="250px" />
+  <img src="readme_figs/drone-dji-tello.jpg" width="250px" />
   <p>An example of a Dji Tello drone.</p>
 </div>
 
@@ -56,7 +56,7 @@ pip install -r $SELF_DRIVING_DRONE/requirements.txt
 During installation, you will be provided with 3 pre-trained models designed for Object Recognition on the obstacle depicted in Figure 1. Additionally, you will receive a way to run them automatically through the `main.py` file.
 
 <div align="center">
-  <img src="demo/obstacle.jpeg" width="300px" />
+  <img src="readme_figs/obstacle.jpeg" width="300px" />
   <p>(Fig. 1) Obstacle Example.</p>
 </div>
 
@@ -89,7 +89,7 @@ We're a group of three hard-working university students at Sapienza University o
 The entire process has been nothing short of stimulating and fulfilling, and we sincerely hope that our passion and dedication shine through in the final outcome. For any clarifications or further information regarding the project, please feel free to reach out to us.
 
 
-<img src="./AUTHORS.svg">
+<img src="readme_figs/AUTHORS.svg">
 
 <br>
 <br>
