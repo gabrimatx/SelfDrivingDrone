@@ -64,7 +64,7 @@ Please, note that any obstacles of similar shape will be suitable to be recogniz
 
 <br>
 
-### **How to run the project:**
+### **How to run the project**
 
 Choose one of the following lines based on the model of your choice:
 
@@ -76,10 +76,14 @@ python main.py faster-rcnn
 $SELF_DRIVING_DRONE
 ```
 
- - If no parameter is passed through the command line to the `main.py` file, the default executed model will be the SSDlite model. 
+- If no parameter is passed through the command line to the `main.py` file, the default executed model will be the SSDlite model. 
 
 - the default executed model can be changed at will in the `main.py` file, simply by changing the value of the `default_model` variable among `Cascade`, `SSDlite` and `faster-RCNN`. (the assignments are case insensitive)
 
+### **Displayed Windows**
+When running the program, two real time windows are displayed:
+- The live video feed captured by the drone, with bounding boxes drawn around any obstacles present in the scene.
+- A graphical representation, comprising subplots, that illustrates the variation of each perceived input with respect to its setpoint (more on this on the project paper at section 4). TODO put hyperlink to the paper
 <br>
 <br>
 
