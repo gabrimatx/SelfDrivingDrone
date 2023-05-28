@@ -95,7 +95,7 @@ class ObstaclesDetector:
 
         else:
              print(self._model_type, type(self._model_type))
-             raise ValueError(f"{self._model_type} in not a valid model. Parameter model type should be either Cascade, Faster R-CNN or SDDLite")
+             raise ValueError(f"{self._model_type} in not a valid model. Parameter model type should be either Cascade, Faster-RCNN or SSDlite")
         
         self._model.load_state_dict(torch.load(self._model_path, map_location=self._device))
         self._model.eval()

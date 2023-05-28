@@ -14,8 +14,8 @@ The goal of SelfDrivingDrone is to provide a high-quality, high-performance code
 SelfDrivingDrone exploits fine-tuned implementations of the following object detection algorithms:
 
 - [Faster R-CNN](https://arxiv.org/abs/1506.01497): Slow, but extremely efficient. 
-- [SSDlite](https://arxiv.org/abs/1512.02325)
-- [Haar Cascade Classifier](https://ieeexplore.ieee.org/document/990517)
+- [SSDlite](https://arxiv.org/abs/1512.02325): Fast, but less efficient than Faster R-CNN. Best option for users lacking a dedicated graphics card.
+- [Haar Cascade Classifier](https://ieeexplore.ieee.org/document/990517): Fast, but less efficient than SSDlite.
 
 <br>
 <br>
@@ -70,14 +70,14 @@ Choose one of the following lines based on the model of your choice:
 ```
 # SELF_DRIVING_DRONE=/path/to/clone/SelfDrivingDrone
 python main.py cascade 
-python main.py ssd-lite 
+python main.py ssdlite 
 python main.py faster-rcnn 
 $SELF_DRIVING_DRONE
 ```
 
  - If no parameter is passed through the command line to the `main.py` file, the default executed model will be the SSDlite model. 
 
-- the default executed model can be changed at will in the `main.py` file, simply by changing the value of the `default_model` variable among `Cascade`, `SSD-lite` and `faster-RCNN`. (the assignments are case insensitive)
+- the default executed model can be changed at will in the `main.py` file, simply by changing the value of the `default_model` variable among `Cascade`, `SSDlite` and `faster-RCNN`. (the assignments are case insensitive)
 
 <br>
 <br>
