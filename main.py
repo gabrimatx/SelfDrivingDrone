@@ -1,7 +1,7 @@
 import cv2
 import sys
 from djitellopy import Tello
-from controller import Controller
+from pid_based_controller import Controller
 
 default_model = "ssdlite"
 argument_dict = {"cascade":Controller.CASCADE, "ssdlite":Controller.SSD_LITE, "faster-rcnn": Controller.FASTER_RCNN}

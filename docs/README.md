@@ -7,7 +7,7 @@ SelfDrivingDrone is an AI software system that implements state-of-the-art objec
   <p>Example SelfDrivingDrone output.</p>
 </div>
 
-# Introduction
+## Introduction
 
 The goal of SelfDrivingDrone is to provide a high-quality, high-performance code for all those who want to fly their Tello drones through any obstacle course.
 
@@ -20,7 +20,7 @@ SelfDrivingDrone exploits fine-tuned implementations of the following object det
 <br>
 <br>
 
-# Installation
+## Installation
 
 **Requirements:**
 
@@ -51,7 +51,7 @@ pip install -r $SELF_DRIVING_DRONE/requirements.txt
 <br>
 <br>
 
-# Quick Start: Using SelfDrivingDrone
+## Quick Start: Using SelfDrivingDrone
 
 During installation, you will be provided with 3 pre-trained models designed for Object Recognition on the obstacle depicted in Figure 1. Additionally, you will receive a way to run them automatically through the `main.py` file.
 
@@ -81,19 +81,9 @@ $SELF_DRIVING_DRONE
 - the default executed model can be changed at will in the `main.py` file, simply by changing the value of the `default_model` variable among `Cascade`, `SSDlite` and `faster-RCNN`. (the assignments are case insensitive)
 
 <br>
-
-### **Displayed Windows**
-As a finishing touch, 2 real time windows are initiated, each operating on the same dedicated thread. These windows serve the purpose of visualizing the following: 
-1. The live video feed captured by the drone, with bounding boxes drawn around any obstacles present in the scene.
-2. A graphical representation, comprising 3 `matplotlib.subplots`, that illustrate the displacement of the nearest obstacle’s center (divided into its x,y components)
-relative to the setpoints for each PID along with the area of the
-obstacle. The Area is given by the number of pixels it occupies within the scene.
-\end{enumerate}
-
-<br>
 <br>
 
-# Authors
+## Authors
 
 We're a group of three hard-working university students at Sapienza University of Rome. SelfDrivingDrone is a project that we have undertaken as part of our academic curriculum, specifically designed to fulfill the requirements of one of our examinations -  AI Lab: Computer Vision and NLP.
 
