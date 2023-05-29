@@ -27,7 +27,7 @@ SelfDrivingDrone exploits fine-tuned implementations of the following object det
 - Python3, Dji Tello drone
 
 <div align="center">
-  <img src=".\readme_figs\drone-dji-tello.jpg" width="250px" />
+  <img src=".\readme_figs\drone-dji-tello.jpg" width="300px" />
   <p>An example of a Dji Tello drone.</p>
 </div>
 
