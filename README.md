@@ -82,7 +82,7 @@ $SELF_DRIVING_DRONE
 
 <br>
 
-### **Displayed Windows**
+### **Visualization**
 As a finishing touch, 2 real time windows are initiated, each operating on the same dedicated thread. These windows serve the purpose of visualizing the following: 
 1. The live video feed captured by the drone, with bounding boxes drawn around any obstacles present in the scene.
 2. A graphical representation, comprising 3 `matplotlib.subplots`, that illustrate the displacement of the nearest obstacle’s center (divided into its x,y components)
