@@ -29,8 +29,8 @@ class Controller:
         self.output_frame_width = 360
         self.output_frame_height = 240
 
-        self._pid_x = PID(-0.23, -0.0013, -0.067, setpoint=self.output_frame_width // 2)
-        self._pid_y = PID(0.4, 0.002, 0.1, setpoint=self.output_frame_height // 2 - 70)
+        self._pid_x = PID(-0.23, -0.0018, -0.067, setpoint=self.output_frame_width // 2)
+        self._pid_y = PID(0.4, 0.002, 0.1, setpoint=self.output_frame_height // 2 - 60)
         self._pid_d = PID(0.0005, 0.00003, 0.000016, setpoint=self.output_frame_height*self.output_frame_width // 4)
 
         self._initialize_plot()
@@ -55,20 +55,20 @@ class Controller:
         This is achieved using a PID control.
         """
         if self._controller_off:
-            if time.time() - self._start_passing_through > 2:
+            if time.time() - self._start_passing_through > 1.6:
                 self._controller_off = False
             plot_img = self._update_and_get_plot_img()
             return plot_img
 
         if self._zero_boxes_counter == 20:
-            # When no box is detected for more than 120 times,
+            # When no box is detected for more than 20 times,
             # try moving up (obstacle could be out of vision range)
             self._tello.send_rc_control(0, 0, 40, 0)
             self._start_passing_through = time.time()
             self._controller_off = True
         
-        elif self._zero_boxes_counter == 100:
-            # When no box is detected for more than 160 times,
+        elif self._zero_boxes_counter == 60:
+            # When no box is detected for more than 60 times,
             # land (it is likely that there are no more obstacles)
             self._land = True
 
@@ -90,10 +90,10 @@ class Controller:
             error_xy = abs(center - np.array([self._pid_x.setpoint, self._pid_y.setpoint]))
             error_area = abs(max_area - self._pid_d.setpoint)
 
-            if (error_xy < 8).all():
-                if error_area < 2000:
+            if (error_xy < 20).all():
+                if error_area < 4000:
                     # Tello is ready to pass through the obstacle
-                    self._tello.send_rc_control(0, 25, 0, 0)
+                    self._tello.send_rc_control(0, 40, 0, 0)
                     self._start_passing_through = time.time()
                     self._controller_off = True
                     plot_img = self._update_and_get_plot_img()
