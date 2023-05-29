@@ -3,7 +3,7 @@
 SelfDrivingDrone is an AI software system that implements state-of-the-art object detection algorithms, including [Faster R-CNN](https://arxiv.org/abs/1506.01497) and [SSDlite](https://arxiv.org/abs/1512.02325), to fly a drone through an obstacle course. It is written in Python and powered by the [djitellopy](https://github.com/damiafuentes/DJITelloPy) and [simple-pid](https://pypi.org/project/simple-pid/) libraries.
 
 <div align="center">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/cFo53diY-kI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <img src="readme_figs/demo.gif" width="480px" />
   <p>Example SelfDrivingDrone output.</p>
 </div>
 
