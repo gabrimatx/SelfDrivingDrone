@@ -29,8 +29,8 @@ class Controller:
         self.output_frame_width = 360
         self.output_frame_height = 240
 
-        self._pid_x = PID(-0.24, -0.013, -0.067, setpoint=self.output_frame_width // 2)
-        self._pid_y = PID(0.3, 0.002, 0.1, setpoint=self.output_frame_height // 2 - 70)
+        self._pid_x = PID(-0.23, -0.0013, -0.067, setpoint=self.output_frame_width // 2)
+        self._pid_y = PID(0.4, 0.002, 0.1, setpoint=self.output_frame_height // 2 - 70)
         self._pid_d = PID(0.0005, 0.00003, 0.000016, setpoint=self.output_frame_height*self.output_frame_width // 4)
 
         self._initialize_plot()
@@ -55,7 +55,7 @@ class Controller:
         This is achieved using a PID control.
         """
         if self._controller_off:
-            if time.time() - self._start_passing_through > 2.5:
+            if time.time() - self._start_passing_through > 2:
                 self._controller_off = False
             plot_img = self._update_and_get_plot_img()
             return plot_img
@@ -90,10 +90,10 @@ class Controller:
             error_xy = abs(center - np.array([self._pid_x.setpoint, self._pid_y.setpoint]))
             error_area = abs(max_area - self._pid_d.setpoint)
 
-            if (error_xy < 25).all():
+            if (error_xy < 8).all():
                 if error_area < 2000:
                     # Tello is ready to pass through the obstacle
-                    self._tello.send_rc_control(0, 30, 0, 0)
+                    self._tello.send_rc_control(0, 25, 0, 0)
                     self._start_passing_through = time.time()
                     self._controller_off = True
                     plot_img = self._update_and_get_plot_img()
