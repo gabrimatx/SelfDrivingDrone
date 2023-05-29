@@ -2,6 +2,7 @@ import cv2
 import sys
 from djitellopy import Tello
 from pid_based_controller import Controller
+from time import sleep
 
 default_model = "ssdlite"
 argument_dict = {"cascade":Controller.CASCADE, "ssdlite":Controller.SSD_LITE, "faster-rcnn": Controller.FASTER_RCNN}
@@ -32,6 +33,7 @@ print("Done")
 print("Tello ready to takeoff")
 tello.send_rc_control(0,0,0,0)
 tello.takeoff()
+
 
 video_writer_drone = cv2.VideoWriter("video_drone.mp4", 
                          cv2.VideoWriter_fourcc(*"MP4V"),
