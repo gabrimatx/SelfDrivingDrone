@@ -13,9 +13,9 @@ The goal of SelfDrivingDrone is to provide a high-quality, high-performance code
 
 SelfDrivingDrone exploits fine-tuned implementations of the following object detection algorithms:
 
-- [Faster R-CNN](https://arxiv.org/abs/1506.01497): Slow, but extremely efficient. 
-- [SSDlite](https://arxiv.org/abs/1512.02325): Fast, but less efficient than Faster R-CNN. Best option for users lacking a dedicated graphics card.
-- [Haar Cascade Classifier](https://ieeexplore.ieee.org/document/990517): Fast, but less efficient than SSDlite.
+- [Faster R-CNN](https://arxiv.org/abs/1506.01497): Slow, but extremely precise. 
+- [SSDlite](https://arxiv.org/abs/1512.02325): Fast, but less precise than Faster R-CNN. Best option for users lacking a dedicated graphics card.
+- [Haar Cascade Classifier](https://ieeexplore.ieee.org/document/990517): Fast, but less precise than SSDlite.
 
 <br>
 <br>
