@@ -4,7 +4,7 @@ SelfDrivingDrone is an AI software system that implements state-of-the-art objec
 
 <div align="center">
   <img src="readme_figs/demo.gif" width="480px" />
-  <p>Example of SelfDrivingDrone execution.</p>
+  <p>Example of SelfDrivingDrone execution. (Watch the complete video <a href="https://www.youtube.com/watch?v=cFo53diY-kI&ab_channel=RubenCiranni">here)</a></p>
 </div>
 
 # Introduction
