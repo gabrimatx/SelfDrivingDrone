@@ -88,7 +88,6 @@ As a finishing touch, 2 real time windows are initiated, each operating on the s
 2. A graphical representation, comprising 3 `matplotlib.subplots`, that illustrate the displacement of the nearest obstacle’s center (divided into its x,y components)
 relative to the setpoints for each PID along with the area of the
 obstacle. The Area is given by the number of pixels it occupies within the scene.
-\end{enumerate}
 
 <br>
 <br>
