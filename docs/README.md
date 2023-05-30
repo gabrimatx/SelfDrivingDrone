@@ -53,7 +53,7 @@ pip install -r $SELF_DRIVING_DRONE/requirements.txt
 
 # Quick Start: Using SelfDrivingDrone
 
-During installation, you will be provided with 3 pre-trained models designed for Object Recognition on the obstacle depicted in Figure 1. Additionally, you will receive a way to run them automatically through the `main.py` file.
+During installation, you will be provided with 3 pre-trained models designed for Object Recognition on the obstacle depicted below. Additionally, you will receive a way to run them automatically through the `main.py` file.
 
 <div align="center">
   <img src=".\readme_figs\obstacle.jpeg" width="300px" />
