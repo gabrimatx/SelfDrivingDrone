@@ -57,7 +57,7 @@ During installation, you will be provided with 3 pre-trained models designed for
 
 <div align="center">
   <img src=".\readme_figs\obstacle.jpeg" width="300px" />
-  <p>Obstacle Example.</p>
+  <p>Obstacle example.</p>
 </div>
 
 Please, note that any obstacles of similar shape will be suitable to be recognized by our models, but the color of the paper may have a small impact on the results.
